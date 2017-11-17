@@ -12,14 +12,34 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // MARK: Checagem se possui 3D Toutch
+        if traitCollection.forceTouchCapability == UIForceTouchCapability.available {
+            
+            self.registerForPreviewing(with: self, sourceView: self.view)
+            
+        } else {
+            
+            print("Não possui 3D Touch")
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
+extension ViewController: UIViewControllerPreviewingDelegate {
+    
+    // MARK: Preview
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        let finalView = storyboard?.instantiateViewController(withIdentifier: "finalID")
+        
+        return finalView
+    }
+    
+    // MARK: ViewControler Final
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+        let finalView = storyboard?.instantiateViewController(withIdentifier: "finalID")
+        
+        self.show(finalView!, sender: self)
+    }
+}
