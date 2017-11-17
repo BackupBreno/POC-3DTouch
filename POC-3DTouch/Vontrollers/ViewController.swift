@@ -10,13 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var button: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // MARK: Checagem se possui 3D Toutch
         if traitCollection.forceTouchCapability == UIForceTouchCapability.available {
             
-            self.registerForPreviewing(with: self, sourceView: self.view)
+            self.registerForPreviewing(with: self, sourceView: self.button)
             
         } else {
             
