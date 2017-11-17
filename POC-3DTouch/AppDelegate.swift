@@ -16,13 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let um = UIApplicationShortcutItem(type: "um", localizedTitle: "Minhas Disciplinas Grande")
-        
-        let dois = UIApplicationShortcutItem(type: "tres", localizedTitle: "Final Tela")
-        
-        let tres = UIApplicationShortcutItem(type: "dois", localizedTitle: "Preview Tela")
-        
-        UIApplication.shared.shortcutItems = [um, dois, tres]
+        // Dynamic Mode
+        let shortcut = UIMutableApplicationShortcutItem(type: "brenoaquino.POC-3DTouch.Dynamic", localizedTitle: "Alocando Dynamicamente")
+        UIApplication.shared.shortcutItems?.append(shortcut)
         
         return true
     }
@@ -51,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         
-        if shortcutItem.type == "um" {
+        if shortcutItem.type == "brenoaquino.POC-3DTouch.Disciplinas" {
             
             let sb = UIStoryboard(name: "Main", bundle: nil)
             
@@ -64,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         }
         
-        else if shortcutItem.type == "dois" {
+        else if shortcutItem.type == "brenoaquino.POC-3DTouch.TelaPreview" {
             
             let sb = UIStoryboard(name: "Main", bundle: nil)
             
@@ -77,11 +73,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         }
         
-        else if shortcutItem.type == "tres" {
+        else if shortcutItem.type == "brenoaquino.POC-3DTouch.TelaFinal" {
             
             let sb = UIStoryboard(name: "Main", bundle: nil)
             
             let second = sb.instantiateViewController(withIdentifier: "finalID") as! FinalViewController
+            
+            let root = UIApplication.shared.keyWindow?.rootViewController
+            
+            root?.present(second, animated: true, completion: {
+                completionHandler(true)
+            })
+        }
+        
+        else if shortcutItem.type == "brenoaquino.POC-3DTouch.Dynamic" {
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            
+            let second = sb.instantiateViewController(withIdentifier: "dinamicoID")
             
             let root = UIApplication.shared.keyWindow?.rootViewController
             

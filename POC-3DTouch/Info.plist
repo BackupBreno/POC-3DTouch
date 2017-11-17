@@ -2,6 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Disciplinas</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>brenoaquino.POC-3DTouch.Disciplinas</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Tela Preview</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>brenoaquino.POC-3DTouch.TelaPreview</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>1f3c6</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Tela Final</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>brenoaquino.POC-3DTouch.TelaFinal</string>
+		</dict>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
