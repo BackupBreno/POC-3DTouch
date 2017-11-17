@@ -12,6 +12,8 @@
 		55041CC91FBE5FEE0089B47A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55041CC71FBE5FEE0089B47A /* Main.storyboard */; };
 		55041CCB1FBE5FEE0089B47A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55041CCA1FBE5FEE0089B47A /* Assets.xcassets */; };
 		55041CCE1FBE5FEE0089B47A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55041CCC1FBE5FEE0089B47A /* LaunchScreen.storyboard */; };
+		5550A24F1FBEAB6800A60134 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5550A24E1FBEAB6800A60134 /* PreviewViewController.swift */; };
+		5550A2511FBEAB7000A60134 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5550A2501FBEAB7000A60134 /* FinalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		55041CCA1FBE5FEE0089B47A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55041CCD1FBE5FEE0089B47A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55041CCF1FBE5FEE0089B47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5550A24E1FBEAB6800A60134 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		5550A2501FBEAB7000A60134 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +59,23 @@
 			isa = PBXGroup;
 			children = (
 				55041CC31FBE5FEE0089B47A /* AppDelegate.swift */,
-				55041CC51FBE5FEE0089B47A /* ViewController.swift */,
+				5550A2521FBEAB7B00A60134 /* Vontrollers */,
 				55041CC71FBE5FEE0089B47A /* Main.storyboard */,
 				55041CCA1FBE5FEE0089B47A /* Assets.xcassets */,
 				55041CCC1FBE5FEE0089B47A /* LaunchScreen.storyboard */,
 				55041CCF1FBE5FEE0089B47A /* Info.plist */,
 			);
 			path = "POC-3DTouch";
+			sourceTree = "<group>";
+		};
+		5550A2521FBEAB7B00A60134 /* Vontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				55041CC51FBE5FEE0089B47A /* ViewController.swift */,
+				5550A24E1FBEAB6800A60134 /* PreviewViewController.swift */,
+				5550A2501FBEAB7000A60134 /* FinalViewController.swift */,
+			);
+			path = Vontrollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +151,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				55041CC61FBE5FEE0089B47A /* ViewController.swift in Sources */,
+				5550A2511FBEAB7000A60134 /* FinalViewController.swift in Sources */,
 				55041CC41FBE5FEE0089B47A /* AppDelegate.swift in Sources */,
+				5550A24F1FBEAB6800A60134 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

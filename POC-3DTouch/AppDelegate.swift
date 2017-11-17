@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let um = UIApplicationShortcutItem(type: "um", localizedTitle: "Minhas Disciplinas Grande")
+        
+        let dois = UIApplicationShortcutItem(type: "tres", localizedTitle: "Final Tela")
+        
+        let tres = UIApplicationShortcutItem(type: "dois", localizedTitle: "Preview Tela")
+        
+        UIApplication.shared.shortcutItems = [um, dois, tres]
+        
         return true
     }
 
@@ -41,6 +49,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        
+        if shortcutItem.type == "um" {
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            
+            let second = sb.instantiateInitialViewController() as! ViewController
+            
+            let root = UIApplication.shared.keyWindow?.rootViewController
+            
+            root?.present(second, animated: true, completion: {
+                completionHandler(true)
+            })
+        }
+        
+        else if shortcutItem.type == "dois" {
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            
+            let second = sb.instantiateViewController(withIdentifier: "previewID") as! PreviewViewController
+            
+            let root = UIApplication.shared.keyWindow?.rootViewController
+            
+            root?.present(second, animated: true, completion: {
+                completionHandler(true)
+            })
+        }
+        
+        else if shortcutItem.type == "tres" {
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            
+            let second = sb.instantiateViewController(withIdentifier: "finalID") as! FinalViewController
+            
+            let root = UIApplication.shared.keyWindow?.rootViewController
+            
+            root?.present(second, animated: true, completion: {
+                completionHandler(true)
+            })
+        }
+    }
 }
 
